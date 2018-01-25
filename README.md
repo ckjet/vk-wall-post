@@ -1,6 +1,8 @@
 # vk-wall-post
 A Symfony project created on January 24, 2018, 8:13 am.
 
+This application allows you to organize a news site based on the publications of the vk group. It uses vk api for getting publications from group.
+
 ### Installation
 For working project you need specify vk access token.
 
