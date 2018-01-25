@@ -1,0 +1,43 @@
+{% if total_pages > 1 %}
+    <div class="text-center">
+        <ul class="pagination pagination-sm">
+            {% if pagination.back %}
+                <li>
+                    <a href="{{ pagination.back }}">&#10094;</a>
+                </li>
+            {% endif %}
+            {% if pagination.first %}
+                <li>
+                    <a href="{{ pagination.first.url }}">{{ pagination.first.number }}</a>
+                </li>
+                <li class="disabled">
+                    <a>...</a>
+                </li>
+            {% endif %}
+            {% for page in pagination.pages %}
+                {% if page.current %}
+                    <li class="active">
+                        <a href="{{ page.url }}">{{ page.number }}</a>
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{{ page.url }}">{{ page.number }}</a>
+                    </li>
+                {% endif %}
+            {% endfor %}
+            {% if pagination.last %}
+                <li class="disabled">
+                    <a>...</a>
+                </li>
+                <li>
+                    <a href="{{ pagination.last.url }}">{{ pagination.last.number }}</a>
+                </li>
+            {% endif %}
+            {% if pagination.next %}
+                <li>
+                    <a href="{{ pagination.next }}">&#10095;</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endif %}

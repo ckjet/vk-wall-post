@@ -1,0 +1,18 @@
+{% extends '@App/layout.html.twig' %}
+
+{% block content %}
+    <div class="container">
+        <div class="col-md-8 col-md-offset-2">
+            {% if page_info.searchQuery %}
+                <h1>Поиск постов по строке "{{ page_info.searchQuery }}"<small>Найдено: {{ page_info.count }}</small></h1>
+            {% else %}
+                <h1>Последние новости</h1>
+            {% endif %}
+            <hr />
+            <div class="row">
+                {{ include('@App/Main/post_list.html.twig') }}
+            </div>
+            {{ get_paginator(page_info)|raw }}
+        </div>
+    </div>
+{% endblock %}

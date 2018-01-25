@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="{%block meta_description %}{% endblock %}">
+        <meta name="keywords" content="{%block meta_keywords %}{% endblock %}">
+        <link rel="icon" href="{{ asset('bundles/app/images/favicon.ico') }}">
+        <title>{% block title %}Vk Wall News{% endblock %}</title>
+        <link href="{{ asset('bundles/app/css/bootstrap.min_pck.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/app/css/fa/font-awesome.min.css') }}" type="text/css" rel="stylesheet" />
+        <link href="{{ asset('bundles/app/css/custom.css') }}" type="text/css" rel="stylesheet" />
+        {% block stylesheets %}
+        {% endblock %}
+    </head>
+    <body>
+        {{ include('@App/header.html.twig') }}
+        {% block content %}
+        {% endblock %}
+        {{ include('@App/footer.html.twig') }}
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('bundles/app/js/jquery-2.2.4.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

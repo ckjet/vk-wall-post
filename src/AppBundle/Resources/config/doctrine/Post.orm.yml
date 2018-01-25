@@ -1,0 +1,45 @@
+AppBundle\Entity\Post:
+    type: entity
+    repositoryClass: AppBundle\Repository\PostRepository
+    table: fc_post
+    id:
+        id:
+            type: bigint
+            generator: { strategy: AUTO }
+    indexes:
+        foreign_idx:
+            columns: [foreign_id]
+    fields:
+        title:
+            type: string
+            length: 250
+            nullable: true
+        description:
+            type: text
+        image:
+            type: string
+            length: 250
+            nullable: true
+        likes:
+            type: integer
+            nullable: true
+        comments:
+            type: integer
+            nullable: true
+        reposts:
+            type: integer
+            nullable: true
+        foreign_id:
+            type: integer
+            nullable: true
+        publicated_at:
+            type: datetime
+            nullable: true
+        created_at:
+            type: datetime
+        updated_at:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks:
+        prePersist: [ setCreatedAtValue ]
+        preUpdate: [ setUpdatedAtValue ]

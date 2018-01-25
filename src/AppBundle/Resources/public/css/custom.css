@@ -1,0 +1,50 @@
+body {
+    padding-top: 50px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pagination-sm > li:first-child > a, .pagination-sm > li:first-child > span, .pagination-sm > li:last-child > a, .pagination-sm > li:last-child > span {
+    border-radius: 0;
+}
+
+.pagination > li > a, .pagination > li > span {
+    margin-right: 4px;
+}
+
+.container h1 {
+    font-size: 30px;
+}
+
+.container h1 small {
+    float: right;
+    line-height: 53px;
+    font-size: 12px;
+}
+
+.container .post {
+    
+}
+
+.container .post img {
+    margin-right: 20px;
+}
+
+.container .post h3 {
+    margin-top: 0;
+    font-size: 20px;
+}
+
+.container .post .counters {
+    margin-top: 10px;
+}
+
+.container .post .counters span:not(:last-child) {
+    margin-right: 20px;
+}

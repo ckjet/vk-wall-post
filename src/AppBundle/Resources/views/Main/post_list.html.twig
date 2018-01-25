@@ -1,0 +1,41 @@
+{% if posts|length %}
+    {% set dateTitle = '' %}
+    {% for post in posts %}
+        {% if dateTitle != post.publicatedAt|date_title %}
+            {% set dateTitle = post.publicatedAt|date_title %}
+            <div class="col-md-12">
+                <h3>{{ dateTitle }}</h3>
+                <hr />
+            </div>
+        {% endif %}
+        <div class="col-md-12 post">
+            {% if post.image %}
+                <img src="{{ post.image }}" class="pull-left" width="150" />
+            {% endif %}
+            {% if post.title %}
+                <h3>{{ post.title|text_highlight(page_info.searchQuery)|raw }}</h3>
+            {% endif %}
+            {{ post.description|text_highlight(page_info.searchQuery)|raw }}
+            <div class="clearfix"></div>
+            <div class="text-muted text-right counters">
+                <span>
+                    <i class="fa fa-calendar"></i>
+                    {{ post.publicatedAt|date('d.m.Y H:i') }}
+                </span>
+                <span>
+                    <i class="fa fa-heart"></i>
+                    {{ post.likes }}
+                </span>
+                <span>
+                    <i class="fa fa-comments"></i>
+                    {{ post.comments }}
+                </span>
+                <span>
+                    <i class="fa fa-bullhorn"></i>
+                    {{ post.reposts }}
+                </span>
+            </div>
+            <hr />
+        </div>
+    {% endfor %}
+{% endif %}
