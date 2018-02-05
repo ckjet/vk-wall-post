@@ -2,8 +2,6 @@
 
 namespace AppBundle\Helper;
 
-use AppBundle\Entity\ShopCategory;
-
 /**
  * Description of PostFilter
  *
